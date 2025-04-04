@@ -15,7 +15,7 @@ from django.contrib.auth.models import PermissionsMixin,AbstractBaseUser,BaseUse
     
 class CustomUser(PermissionsMixin,AbstractBaseUser):
     avatar = models.ImageField(null=True,blank=True)
-    username = models.CharField(max_length=100,unique=True )
+    username = models.CharField(max_length=100,unique=True,null=False,blank=False )
     email = models.EmailField(unique=True,null=False,blank=False)
     is_active = models.BooleanField(default=False)
    # is_superuser=models.BooleanField(default=False)
